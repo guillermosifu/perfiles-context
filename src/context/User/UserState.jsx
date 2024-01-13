@@ -1,5 +1,5 @@
 import axios from "axios";
-import UserContext from "./UserContext";
+import UserContext from "../User/UserContext";
 import {GET_USERS,GET_PROFILE} from "../types"
 import { useReducer } from "react";
 import UserReducer from "./UserReducer";

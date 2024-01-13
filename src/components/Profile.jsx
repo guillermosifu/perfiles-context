@@ -1,14 +1,22 @@
 import { useContext } from "react";
-import UserContext from "../context/UserContext";
+import UserContext from "../context/User/UserContext";
 
 const Profile = () => {
-    const{selectedUser}=useContext(UserContext)
-
-
+  const { selectedUser } = useContext(UserContext);
 
   return (
-    <div>Profile</div>
-  )
-}
+    <>
+      {selectedUser ? (
+        <div>
+          <img src={selectedUser.avatar} alt="profile" />
+          <h1>{`${selectedUser.first_name}${selectedUser.last_name}`}</h1>
+          <h3>email:{selectedUser.email}</h3>
+        </div>
+      ) : (
+        <div>No hay usuario Seleccionado</div>
+      )}
+    </>
+  );
+};
 
-export default Profile
+export default Profile;

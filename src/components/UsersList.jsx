@@ -9,9 +9,19 @@ const UsersList = () => {
   }, []);
 
   return (
-    <>
-      <h1>Hola</h1>
-    </>
+    <div className="list-group h-100">
+      {userContext.users.length 
+      ? userContext.users.map((user)=>(
+        <a href="!#"
+        onClick={()=>userContext.getProfile(user.id)} className="list-group-item list-group-item-action d-flex flex-row">
+        <img src={user.avatar} alt="" />
+        <p>{user.first_name + "" +user.last_name}</p>
+          
+        </a>
+      )):(
+        null
+      )}
+    </div>
   );
 };
 
