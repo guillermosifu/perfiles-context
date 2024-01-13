@@ -16,8 +16,8 @@ const UserState = (props) => {
 
   const getUsers = async () => {
     try {
-      const res = await axios.get("https://reqres.in/api/users");
-      const data = res.data.data;
+      const response = await axios.get("https://reqres.in/api/users");
+      const data = response.data.data;
       dispatch({ type: GET_USERS, payload: data });
     } catch (error) {
       console.error(error);
@@ -26,8 +26,8 @@ const UserState = (props) => {
 
   const getProfile = async (id) => {
     try {
-      const res = await axios.get("https://reqres.in/api/users/" + id);
-      const { data }= res;
+      const response = await axios.get("https://reqres.in/api/users/" + id);
+      const { data }= response;
       dispatch({ type: GET_PROFILE, payload: data.data });
     } catch (error) {}
   };
